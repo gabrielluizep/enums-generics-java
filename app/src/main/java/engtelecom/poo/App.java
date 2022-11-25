@@ -3,82 +3,15 @@
  */
 package engtelecom.poo;
 
-import edu.princeton.cs.algs4.Draw;
-import edu.princeton.cs.algs4.DrawListener;
+import org.checkerframework.checker.units.qual.cd;
 
-import java.awt.Color;
+import engtelecom.poo.generic.*;
 
-public class App implements DrawListener {
-    private Draw canvas;
-
-    public App() {
-        canvas = new Draw();
-        canvas.setXscale(0, 800);
-        canvas.setYscale(0, 800);
-        canvas.enableDoubleBuffering();
-        canvas.addListener(this);
-    }
-
-    // public void draw() {
-    // Circle c = new Circle(400, 400, 100);
-    // canvas.clear();
-    // c.draw(canvas);
-    // canvas.show();
-    // }
-
+public class App {
     public static void main(String[] args) {
-        App app = new App();
-        // app.draw();
-
-    }
-
-    @Override
-    public void mousePressed(double x, double y) {
-        // TODO Auto-generated method stub
-
-        Circle c = new Circle((int) x, (int) y, 50, Colors.RED);
-
-        c.draw(canvas);
-        canvas.show();
-    }
-
-    @Override
-    public void mouseDragged(double x, double y) {
-        // TODO Auto-generated method stub
-
-        Circle c = new Circle((int) x, (int) y, 10, Colors.BLUE);
-
-        c.draw(canvas);
-        canvas.show();
-    }
-
-    @Override
-    public void mouseReleased(double x, double y) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void mouseClicked(double x, double y) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void keyTyped(char c) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void keyPressed(int keycode) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void keyReleased(int keycode) {
-        // TODO Auto-generated method stub
-
+        Box<String> c = new Box<String>();
+        String s = "Olá mundo";
+        c.set(s);
+        String s2 = c.getData();
     }
 }
